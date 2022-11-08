@@ -58,7 +58,7 @@
     cursor: pointer;
 }
 
-h1 {
+#description {
     color: #fff;
     text-transform: uppercase;
     text-align: center;
