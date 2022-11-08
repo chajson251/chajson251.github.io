@@ -58,6 +58,13 @@
     cursor: pointer;
 }
 
+h1 {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 20vh;
+}
+
 h2 {
     padding-top: 1%;
     margin-bottom: -3%;
