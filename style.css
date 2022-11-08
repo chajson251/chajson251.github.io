@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.banner {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(./public/main.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.navbar ul li a {
+    color: #fff;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0%;
+    background: orangered;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+   width: 100%;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+}
+
+.logo {
+    width: 300px;
+    cursor: pointer;
+}
+
+h2 {
+    padding-top: 1%;
+    margin-bottom: -3%;
+    text-align: center;
+    color: #fff;
+}
+
+#map {
+    margin: 10% auto;
+    text-align: center;
+    height: 50vh;
+    width: 50vw;
+}
+
+.about {
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.about li {
+    padding: .5%;
+}
