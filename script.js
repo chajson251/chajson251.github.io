@@ -87,11 +87,11 @@ contactLink.addEventListener('click', () =>{
           +48 881 933 164
         </li>
         <li>
-          test@test.com
+        kubapie17@interia.pl
         </li>
        </ul>
        <div class="formContainer">
-       <form target="_blank" action="https://formsubmit.co/piotr.chaja251@gmail.com" method="POST">
+       <form target="_blank" action="https://formsubmit.co/kubapie17@interia.pl" method="POST">
          <div class="form-group">
            <div class="form-row">
              <div class="col">
