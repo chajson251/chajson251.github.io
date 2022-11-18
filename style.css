@@ -12,6 +12,10 @@
     background-position: center;
 }
 
+.hamburger {
+    opacity: 0;
+}
+
 .navbar {
     width: 85%;
     margin: auto;
@@ -73,20 +77,166 @@ h2 {
 }
 
 #map {
-    margin: 10% auto;
+    margin: 5% auto;
     text-align: center;
     height: 50vh;
     width: 50vw;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
+
 
 .about {
     color: #fff;
-    font-size: 24px;
+    font-size: 1em;
     text-transform: uppercase;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .about li {
-    padding: .5%;
+    list-style: none;
+    padding: .20%;
+    margin: 2%;
+}
+
+.anim-trans-in {
+    animation: anim-in 1s ease-in-out;
+    }
+
+.anim-trans-out {
+    animation: anim-out 1s ease-in-out;
+    }
+
+.formContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.formContainer button {
+    width: 20%;
+    align-self: center;
+}
+
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    margin-top:5px
+}
+
+@keyframes anim-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes anim-out{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@media (max-width: 35em) {
+
+    body:not(.hamburger .hamburger-box .hamburger-inner) {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        position: relative;
+        z-index: 9999;
+        height: 100vh;
+        inset: 0 0 0 20%;
+        background: rgba(2, 2, 2, 0.1);
+        backdrop-filter: blur(1rem);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        padding: 0;
+        margin: 0;
+        transform: translateX(100%);
+        transition: 0.5s;
+    }
+
+    .active {
+        transform: translateX(0%);
+        transition: 0.5s;
+    }
+
+    .logo {
+        width: 70%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .hamburger {
+        top: 5%;
+        position: absolute;
+        opacity: 1
+    }
+
+    .hamburger-inner {
+        background: #fff;
+    }
+    
+    .navbar ul {
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin-top: -60%;
+        margin-left: 10%;
+    }
+
+    .navbar ul li a{
+        font-weight: 800;
+        color: #000;
+
+    }
+
+    #description {
+        transition: opacity 1s linear;
+        opacity: 1
+    }
+
+    .about{
+        transition: 0.5s;
+        opacity: 1;
+        transition: opacity 1s linear;
+    }
+
+    .content{
+        padding: 0;
+        font-size: 1em;
+        margin-top: -150%;
+        transition: 0.5s;
+    }
+
+    #map {
+        width: 100vw;
+    }
 }

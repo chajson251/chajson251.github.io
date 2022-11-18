@@ -2,8 +2,8 @@
 <html lang="pl">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Gaz serwis Jakub Pierzak</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
@@ -11,22 +11,30 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
     integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
     crossorigin=""/>
+    <link href="./hamburgers.css" rel="stylesheet">
     <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
      integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
      crossorigin=""></script>
   </head>
   <body>
     <div class="banner">
+      <button class="hamburger hamburger--collapse" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button> 
         <div class="navbar">
-            <a href="./index.html"><img src="./public/logo-edit.png" class="logo"></a>
+            <a href="#"><img src="./public/logo-white-edit.png" class="logo"></a>
             <ul>
-                <li><a href="./about.html">Zakres uslug</a></li>
-                <li><a href="./map.html">Gdzie dzialamy</a></li>
-                <li><a href="./contact.html">Kontakt</a></li>
+                <li><a id="about" href="#">Zakres usług</a></li>
+                <li><a id="map-nav" href="#">Gdzie działamy</a></li>
+                <li><a id="contact" href="#">Kontakt</a></li>
             </ul>
         </div>
-        <h2>Nasze uslugi swiadczymy w promieniu 40km od Kielc.</h2>
-        <div id="map"></div>
+        <div class="content">
+          <h1 id="description">Dziękujemy za kontakt</br> W krótce się odezwiemy</h1>
+
+        </div>
     </div>
 <script src="./script.js"></script>
 </body>
