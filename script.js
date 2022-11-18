@@ -105,7 +105,7 @@ contactLink.addEventListener('click', () =>{
          <div class="form-group">
            <textarea placeholder="Twoja wiadomość" class="form-control" name="message" rows="10" required></textarea>
          </div>
-         <input type="hidden" name="_next" value="http://127.0.0.1:5500//thanks.html">
+         <input type="hidden" name="_next" value="http://chajson251.github.io/thanks.html">
          <button id="emailButton" type="submit" class="btn btn-lg btn-dark btn-block">Wyślij</button>
        </form>
      </div>
