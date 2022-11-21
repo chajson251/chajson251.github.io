@@ -87,11 +87,11 @@ contactLink.addEventListener('click', () =>{
           +48 881 933 164
         </li>
         <li>
-        kubapie17@interia.pl
+        biuro@gasservice.pl
         </li>
        </ul>
        <div class="formContainer">
-       <form target="_blank" action="https://formsubmit.co/kubapie17@interia.pl" method="POST">
+       <form target="_blank" action="https://formsubmit.co/biuro@gasservice.pl" method="POST">
          <div class="form-group">
            <div class="form-row">
              <div class="col">
