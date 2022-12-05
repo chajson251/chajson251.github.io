@@ -23,8 +23,16 @@ const removeInTransition = () => {
 
 logo.addEventListener('click', () =>{
   content.classList.add("anim-trans-out" );
+  const all = document.querySelector('*').style;
+  all.overflow = 'hidden';
     content.innerHTML = `
-    <h1 id="description">Profesjonalny serwis piecy gazowych<\/h1>
+    <div class="contentMain">
+    <h3 class="description">GAS SERVICE </br>Autoryzowany serwis</br> kotłów gazowych Immergas</h3>
+          <h3 class="description">Firma Gas Service specjalzuje się w  uruchamianiu, serwisowaniu i naprawianiu awarii kotłów gazowych firmy Immergas.
+            Usługi przeprowadzamy na ternie województwa świetokrzyskiego. Zapraszamy do kontaku przechodząc do zakładki "Kontakt".
+          </h3>
+          <div class="immergas"><img class="immergas" src="./public/piec (1).png"></div>
+        </div>
     `;
     content.classList.remove( "anim-trans-out" );
     content.classList.add( "anim-trans-in" );
@@ -34,31 +42,39 @@ logo.addEventListener('click', () =>{
 
 aboutLink.addEventListener('click', () =>{
   content.classList.add( "anim-trans-out" );
+  const all = document.querySelector('*').style;
+  all.overflow = 'auto';
     content.innerHTML = `
-    <h2>Nasze usługi to:</h2>
-    <ul class="about">
-        <li>
-          Serwis gwarancyjny
-        </li>
-        <li>
-          Serwis pogwarancyjny
-        </li>
-        <li>
-          Dystrybucja części marki immergas
-        </li>
-        <li>
-          Próby szczelności instalacji oraz urządzeń gazowych
-        </li>
-        <li>
-          Analiza spalin potwierdzona wydrukiem
-        </li>
-        <li>
-          Pierwsze uruchomienia kotłów gazowych
-        </li>
-        <li>
-          Coroczne przeglądy techniczne urządzeń
-        </li>
-       </ul>
+    <div class="contentAbout">
+    <h3 class="aboutDescription">
+          Serwis gwarancyjny<br><br>
+          Jako osoby z autoryzacją od producenta mają Państwo pewność, że piec jest rejestrowany w bazie danych oraz na pewno gwarancja będzie uwzględniona po serwisie.
+          </h3>        
+          <h3  class="aboutDescription">
+          Serwis pogwarancyjny<br><br>
+          obejmuje on zwykły przegląd pod kątem wydajności i prawidłowego funkcjonowania jak i zarówno w przypadku niespodziewanych awarii. Bezpieczeństwo przy codziennej eksploatacji kotłów gazowych jest najważniejsze, a szczególnie w okresie pogwarancyjnym.
+          </h3>        
+        <h3  class="aboutDescription">
+          Dystrybucja części marki immergas<br><br>
+          jako partner serwisowy posiadamy niemal natychmiastowy dostęp do części zamiennych. Twoja awaria będzie dzięki temu szybko i pewnie naprawiona.
+          </h3>        
+        <h3  class="aboutDescription">
+          Próby szczelności instalacji oraz urządzeń gazowych<br><br>
+          Bezpieczeństwo w przypadku zasilania gazem domu bądź mieszkania jest priorytetem. Oferta obejmuje  zarówno piece gazowe jak i podłączenia oraz sprawdzenie instalacji gazowej pod kątem ewentualnych nieszczelności specjalnymi atestowanymi urządzeniami.
+          </h3>        
+        <h3 class="aboutDescription">
+          Analiza spalin potwierdzona wydrukiem<br><br>
+          Zalecana, gdy potrzebujesz zweryfikować swój piec gazowy pod kątem prawidłowego działania.
+          </h3>        
+        <h3 class="aboutDescription">
+          Pierwsze uruchomienia kotłów gazowych<br><br>
+          posiadamy specjalne uprawnienia do uruchomienia twojego świeżo zamontowanego kotła gazowego. Klient uzyskuje wtedy gwarancje ze strony producenta, którą można przedłużać corocznymi przeglądami technicznymi.
+          </h3>        
+        <h3 class="aboutDescription">
+          Coroczne przeglądy techniczne urządzeń<br><br>
+          prowadzimy skrupulatną dokumentację i gdy tylko zbliża się termin serwisu odrazu się z Tobą skontaktujemy w celu umówienia się na ewentualną kontrolę.
+          </h3>
+          </div>        
     `;
     content.classList.remove( "anim-trans-out" );
     content.classList.add( "anim-trans-in");
@@ -68,8 +84,11 @@ aboutLink.addEventListener('click', () =>{
 mapLink.addEventListener('click', () =>{
   content.classList.add( "anim-trans-out" );
     content.innerHTML = `
-    <h2>Nasze usługi świadczymy w promieniu 40km od Kielc.</h2>
+    <div class="contentAbout">
+
+    <h3>Nasze usługi świadczymy w promieniu 40km od Kielc.</h3>
         <div id="map"></div>
+        </div>
     `;
     content.classList.remove( "anim-trans-out" );
     content.classList.add( "anim-trans-in" );
@@ -81,7 +100,7 @@ mapLink.addEventListener('click', () =>{
 contactLink.addEventListener('click', () =>{
   content.classList.add( "anim-trans-out" );
     content.innerHTML = `
-    <h2>Kontakt:</h2>
+    <h3>Kontakt:</h3>
     <ul class="about">
         <li>
           +48 881 933 164

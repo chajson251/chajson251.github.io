@@ -2,14 +2,15 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 }
 
 .banner {
-    height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(./public/main.jpg);
+    background-image: url(./public/main.jpg);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 .hamburger {
@@ -17,9 +18,10 @@
 }
 
 .navbar {
-    width: 85%;
+    width: 100%;
+    background-color: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75));
     margin: auto;
-    padding: 35px 0;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -58,15 +60,60 @@
 }
 
 .logo {
-    width: 300px;
+    width: 400px;
     cursor: pointer;
 }
 
-#description {
+
+.description {
     color: #fff;
-    text-transform: uppercase;
     text-align: center;
-    margin-top: 20vh;
+    margin-top: 10vh;
+    height: 20vh;
+}
+.content {
+    height: 100vh;
+    overflow: hidden;
+}
+.contentMain {
+    color: #fff;
+    background-image: linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.30)); 
+    background-size: 20px;
+    display: grid;
+    margin-top: 10vh;
+    width: 100vw;
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    justify-items: center;
+    }
+
+.contentAbout {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: repeat(3, 2fr);
+    grid-template-rows: 3fr 3fr 3fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: center;
+
+}
+
+.aboutDescription {
+    margin: 10px;
+    min-width: 30vw;
+    min-height: 40vh;
+    background-image: linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.50));
+    text-align: center;
+    color: #fff;
+    border-radius: 25px;
+}
+
+.immergas {
+    margin: 0;
+    height: 400px;
+    width: 400px;
 }
 
 h2 {
@@ -213,6 +260,7 @@ form {
 
     .navbar ul li a{
         font-weight: 800;
+        font-size: 2em; 
         color: #fff;
 
     }

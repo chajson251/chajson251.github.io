@@ -5,9 +5,16 @@
  * @site https://jonsuh.com/hamburgers
  * @link https://github.com/jonsuh/hamburgers
  */
+
+ @media (max-width: 35em) {
+   .hamburger {
+     display: inline-block;
+   }
+ }
+
  .hamburger {
     padding: 15px 15px;
-    display: inline-block;
+    display: none;
     cursor: pointer;
     transition-property: opacity, filter;
     transition-duration: 0.15s;
