@@ -1,14 +1,17 @@
 const menuButton = document.querySelector('.hamburger');
 const navBar = document.querySelector('.navbar');
 const all = document.querySelector('*').style;
+
+all.overflowX = 'hidden';
 menuButton.addEventListener('click', (e) => {
     if(menuButton.classList.contains('is-active')) {
         menuButton.classList.remove('is-active');
         navBar.classList.remove('active');
-        all.overflow = 'auto';
+        all.overflowY = 'auto';
+        all.overflowX = 'hidden';
         
     } else {
-        all.overflow = 'hidden';
+        all.overflowY = 'hidden';
         menuButton.classList.add('is-active');
         navBar.classList.add('active');
     }
@@ -29,10 +32,11 @@ const banner = document.querySelector('.banner');
 logo.addEventListener('click', () =>{
   content.classList.add("anim-trans-out" );
   if(media) {
-    all.overflow = 'auto';
+    all.overflowY = 'auto';
+    all.overflowX = 'hidden';
     banner.style.height = '200vh';
   } else {
-    all.overflow = 'hidden';
+    all.overflowY = 'hidden';
     content.style.height = '100vh';
   }
 
@@ -54,8 +58,11 @@ logo.addEventListener('click', () =>{
 aboutLink.addEventListener('click', () =>{
   content.classList.add( "anim-trans-out" );
   const body = document.querySelector('body').style;
-  all.overflow = 'auto';
-  body.overflow = 'auto';
+  all.overflowY = 'auto';
+  all.overflowX = 'hidden';
+  body.overflowY = 'auto';
+  body.overflowX = 'hidden';
+
   if(media) {
     banner.style.height = '400vh';
   } else {
@@ -112,11 +119,12 @@ mapLink.addEventListener('click', () =>{
   const body = document.querySelector('body').style;
 
   if(media) {
-    all.overflow = 'auto';
-    body.overflow = 'hidden';
+    all.overflowY = 'auto';
+    body.overflowY = 'hidden';
+    all.overflowX = 'hidden';
     banner.style.height = '150vh';
   } else {
-    all.overflow = 'hidden';
+    all.overflowY = 'hidden';
     banner.style.height = 'auto';
     content.style.height = '100vh';
   }
@@ -147,11 +155,12 @@ contactLink.addEventListener('click', () =>{
   const all = document.querySelector('*').style;
   const body = document.querySelector('body').style;
   if(media) {
-    all.overflow = 'auto';
-    body.overflow = 'hidden';
+    all.overflowY = 'auto';
+    body.overflowY = 'hidden';
+    all.overflowX = 'hidden';
     banner.style.height = '150vh';
   } else {
-    all.overflow = 'hidden';
+    all.overflowY = 'hidden';
     banner.style.height = 'auto';
     content.style.height = '100vh';
   }
