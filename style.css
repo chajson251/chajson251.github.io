@@ -2,8 +2,14 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    overflow: hidden;
 }
+
+*:not(
+    #map, 
+    .contentMap >*,
+    ) {
+        overflow: hidden;
+    }
 
 .banner {
     width: 100%;
@@ -27,6 +33,10 @@
     justify-content: space-between;
 }
 
+.navbar ul {
+    margin-right: 10vw;
+}
+
 .navbar ul li {
     list-style: none;
     display: inline-block;
@@ -38,6 +48,7 @@
 
 .navbar ul li a {
     color: #fff;
+    text-decoration: none;
 }
 
 .navbar ul li::after {
@@ -55,10 +66,6 @@
    width: 100%;
 }
 
-.navbar ul li a {
-    text-decoration: none;
-}
-
 .logo {
     width: 400px;
     cursor: pointer;
@@ -70,6 +77,7 @@
     text-align: center;
     margin-top: 10vh;
     height: 20vh;
+    font-weight: 200;
 }
 .content {
     height: 100vh;
@@ -91,7 +99,6 @@
 
 .contentAbout {
     display: grid;
-    width: 100vw;
     grid-template-columns: repeat(3, 2fr);
     grid-template-rows: 3fr 3fr 3fr;
     grid-column-gap: 0px;
@@ -100,14 +107,54 @@
 
 }
 
+.contentContact {
+    display: grid;
+    width: 100vw;
+    height: 60%;
+    grid-template-columns: 1fr 2fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: center;
+
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contactInfo h3 {
+    color: #000;
+}
+
+.contactInfo ul li {
+    color: #000;
+}
+
+.contentMap {
+    width: 100vw;
+    height: 60%;
+    display: grid;
+    position: relative;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin-top: 0;
+    align-items: center;
+}
+
 .aboutDescription {
-    margin: 10px;
+    margin: 20px;
     min-width: 30vw;
     min-height: 40vh;
     background-image: linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.50));
     text-align: center;
     color: #fff;
-    border-radius: 25px;
+    border-radius: 10px;
+    font-weight: 200;
 }
 
 .immergas {
@@ -130,6 +177,9 @@ h2 {
     width: 50vw;
     overflow-y: hidden;
     overflow-x: hidden;
+    border-color: #000;
+    border-style: solid;
+    border-radius: 10px;
 }
 
 
@@ -170,16 +220,42 @@ form {
 }
 
 .formContainer button {
-    width: 20%;
+    width: 40%;
+    height: 40px;
     align-self: center;
+    background: #000;
+    border-width: .5px;
+    border-color: #fff;
+    color: #fff;
+    opacity: .8;
+    transition: .5s;
+    border-radius: 10px;
+}
+
+.formContainer button:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 
 .form-group {
-    width: 100%;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+
+}
+
+textarea {
+    height: 40vh;
+}
+
+.form-control {
+    color: #fff;
+    background: linear-gradient(rgba(0,0,0,0.90), rgba(0,0,0,0.70));
+    border-width: .5px;
+    border-color: #fff;
+    border-radius: 10px;
 }
 
 .form-row {
@@ -206,17 +282,95 @@ form {
 }
 
 @media (max-width: 35em) {
+    *:not(.hamburger, .hamburger-box, .hamburger-inner, #map, 
+    .contentMap >*,
 
-    body:not(.hamburger .hamburger-box .hamburger-inner) {
-        overflow-y: hidden;
+    ) {
+        overflow-y: auto;
         overflow-x: hidden;
+    }
+
+    .content {
+        height: 100vh;
+        overflow: auto;
+    }
+
+    .contentMain {
+        position: absolute;
+        color: #fff;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin-top: -60vh;
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    .immergas {
+         overflow: hidden;
+    }
+    
+    .contentAbout {
+        position: absolute;
+        color: #fff;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin-top: -80vh;
+        z-index: 10;
+    }
+
+    .contentMap {
+        display: grid;
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        color: #fff;
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 2fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin-top: -80vh;
+        z-index: 10;
+    }
+
+    .contentMap h3 {
+        word-wrap: break-word;
+        margin: 0 5vw;
+        color: #000;
+    }
+
+    .contentContact {
+        display: grid;
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        color: #fff;
+        grid-template-columns: 1fr;
+        grid-template-rows: 3fr 2fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        margin-top: -80vh;
+        z-index: 10;
+        overflow: hidden;
+    }
+
+    .form-group {
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        overflow: hidden;
+    
     }
 
     .navbar {
         position: relative;
-        z-index: 9999;
+        z-index: 11;
         height: 100vh;
-        inset: 0 0 0 20%;
+        inset: 0 0 0 15%;
         background-color: #000;
         display: flex;
         flex-direction: column;
@@ -231,6 +385,7 @@ form {
     .active {
         transform: translateX(0%);
         transition: 0.5s;
+        z-index: 11;
     }
 
     .logo {
@@ -240,9 +395,10 @@ form {
     }
 
     .hamburger {
+        display: inline-block;
         top: 5%;
         position: absolute;
-        opacity: 1
+        opacity: 1;
     }
 
     .hamburger-inner {
@@ -259,8 +415,8 @@ form {
     }
 
     .navbar ul li a{
-        font-weight: 800;
-        font-size: 2em; 
+        font-weight: 400;
+        font-size: 1.5em; 
         color: #fff;
 
     }
@@ -276,14 +432,10 @@ form {
         transition: opacity 1s linear;
     }
 
-    .content{
+    #map {
+        margin: 0 auto;
         padding: 0;
-        font-size: 1em;
-        margin-top: -150%;
-        transition: 0.5s;
+        width: 90%;
     }
 
-    #map {
-        width: 100vw;
-    }
 }

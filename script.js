@@ -1,11 +1,14 @@
 const menuButton = document.querySelector('.hamburger');
 const navBar = document.querySelector('.navbar');
+const all = document.querySelector('*').style;
 menuButton.addEventListener('click', (e) => {
     if(menuButton.classList.contains('is-active')) {
         menuButton.classList.remove('is-active');
         navBar.classList.remove('active');
+        all.overflow = 'auto';
         
     } else {
+        all.overflow = 'hidden';
         menuButton.classList.add('is-active');
         navBar.classList.add('active');
     }
@@ -21,13 +24,21 @@ const removeInTransition = () => {
   content.classList.remove("anim-trans-in");
 }
 
+const media = window.matchMedia("(max-width: 35em)").matches;
+const banner = document.querySelector('.banner');
 logo.addEventListener('click', () =>{
   content.classList.add("anim-trans-out" );
-  const all = document.querySelector('*').style;
-  all.overflow = 'hidden';
+  if(media) {
+    all.overflow = 'auto';
+    banner.style.height = '200vh';
+  } else {
+    all.overflow = 'hidden';
+    content.style.height = '100vh';
+  }
+
     content.innerHTML = `
     <div class="contentMain">
-    <h3 class="description">GAS SERVICE </br>Autoryzowany serwis</br> kotłów gazowych Immergas</h3>
+    <h3 class="description">GAS SERVICE <br></br>Autoryzowany serwis</br> kotłów gazowych Immergas</h3>
           <h3 class="description">Firma Gas Service specjalzuje się w  uruchamianiu, serwisowaniu i naprawianiu awarii kotłów gazowych firmy Immergas.
             Usługi przeprowadzamy na ternie województwa świetokrzyskiego. Zapraszamy do kontaku przechodząc do zakładki "Kontakt".
           </h3>
@@ -42,35 +53,49 @@ logo.addEventListener('click', () =>{
 
 aboutLink.addEventListener('click', () =>{
   content.classList.add( "anim-trans-out" );
-  const all = document.querySelector('*').style;
+  const body = document.querySelector('body').style;
   all.overflow = 'auto';
+  body.overflow = 'auto';
+  if(media) {
+    banner.style.height = '400vh';
+  } else {
+    banner.style.height = 'auto';
+    content.style.height = 'auto';
+  }
     content.innerHTML = `
     <div class="contentAbout">
     <h3 class="aboutDescription">
+          <br>
           Serwis gwarancyjny<br><br>
           Jako osoby z autoryzacją od producenta mają Państwo pewność, że piec jest rejestrowany w bazie danych oraz na pewno gwarancja będzie uwzględniona po serwisie.
           </h3>        
           <h3  class="aboutDescription">
+          <br>
           Serwis pogwarancyjny<br><br>
           obejmuje on zwykły przegląd pod kątem wydajności i prawidłowego funkcjonowania jak i zarówno w przypadku niespodziewanych awarii. Bezpieczeństwo przy codziennej eksploatacji kotłów gazowych jest najważniejsze, a szczególnie w okresie pogwarancyjnym.
           </h3>        
         <h3  class="aboutDescription">
+        <br>
           Dystrybucja części marki immergas<br><br>
           jako partner serwisowy posiadamy niemal natychmiastowy dostęp do części zamiennych. Twoja awaria będzie dzięki temu szybko i pewnie naprawiona.
           </h3>        
         <h3  class="aboutDescription">
+        <br>
           Próby szczelności instalacji oraz urządzeń gazowych<br><br>
           Bezpieczeństwo w przypadku zasilania gazem domu bądź mieszkania jest priorytetem. Oferta obejmuje  zarówno piece gazowe jak i podłączenia oraz sprawdzenie instalacji gazowej pod kątem ewentualnych nieszczelności specjalnymi atestowanymi urządzeniami.
           </h3>        
         <h3 class="aboutDescription">
+        <br>
           Analiza spalin potwierdzona wydrukiem<br><br>
           Zalecana, gdy potrzebujesz zweryfikować swój piec gazowy pod kątem prawidłowego działania.
           </h3>        
         <h3 class="aboutDescription">
+        <br>
           Pierwsze uruchomienia kotłów gazowych<br><br>
           posiadamy specjalne uprawnienia do uruchomienia twojego świeżo zamontowanego kotła gazowego. Klient uzyskuje wtedy gwarancje ze strony producenta, którą można przedłużać corocznymi przeglądami technicznymi.
           </h3>        
         <h3 class="aboutDescription">
+        <br>
           Coroczne przeglądy techniczne urządzeń<br><br>
           prowadzimy skrupulatną dokumentację i gdy tylko zbliża się termin serwisu odrazu się z Tobą skontaktujemy w celu umówienia się na ewentualną kontrolę.
           </h3>
@@ -83,13 +108,33 @@ aboutLink.addEventListener('click', () =>{
 
 mapLink.addEventListener('click', () =>{
   content.classList.add( "anim-trans-out" );
-    content.innerHTML = `
-    <div class="contentAbout">
+  const all = document.querySelector('*').style;
+  const body = document.querySelector('body').style;
 
+  if(media) {
+    all.overflow = 'auto';
+    body.overflow = 'hidden';
+    banner.style.height = '150vh';
+  } else {
+    all.overflow = 'hidden';
+    banner.style.height = 'auto';
+    content.style.height = '100vh';
+  }
+  if(media) {
+    content.innerHTML = `
+    <div class="contentMap">
     <h3>Nasze usługi świadczymy w promieniu 40km od Kielc.</h3>
-        <div id="map"></div>
-        </div>
+      <div id="map"></div>
+    </div>
     `;
+  } else {
+    content.innerHTML = `
+    <div class="contentMap">
+      <div id="map"></div>
+      <h3>Nasze usługi świadczymy w promieniu 40km od Kielc.</h3>
+    </div>
+    `;
+  }
     content.classList.remove( "anim-trans-out" );
     content.classList.add( "anim-trans-in" );
     setTimeout(() => content.classList.remove("anim-trans-in"), 1000);
@@ -99,7 +144,20 @@ mapLink.addEventListener('click', () =>{
 
 contactLink.addEventListener('click', () =>{
   content.classList.add( "anim-trans-out" );
+  const all = document.querySelector('*').style;
+  const body = document.querySelector('body').style;
+  if(media) {
+    all.overflow = 'auto';
+    body.overflow = 'hidden';
+    banner.style.height = '150vh';
+  } else {
+    all.overflow = 'hidden';
+    banner.style.height = 'auto';
+    content.style.height = '100vh';
+  }
     content.innerHTML = `
+    <div class="contentContact">
+    <div class="contactInfo">
     <h3>Kontakt:</h3>
     <ul class="about">
         <li>
@@ -108,10 +166,14 @@ contactLink.addEventListener('click', () =>{
         <li>
         biuro@gasservice.pl
         </li>
+        <li>
+        Kielce ul. Zagórska 233/lok. 2
+        </li>
        </ul>
+       </div>
        <div class="formContainer">
        <form target="_blank" action="https://formsubmit.co/biuro@gasservice.pl" method="POST">
-         <div class="form-group">
+         <div class="form-group form-contact-data">
            <div class="form-row">
              <div class="col">
                <input type="text" name="name" class="form-control" placeholder="Twoje imię" required>
@@ -127,6 +189,7 @@ contactLink.addEventListener('click', () =>{
          <input type="hidden" name="_next" value="http://chajson251.github.io/thanks.html">
          <button id="emailButton" type="submit" class="btn btn-lg btn-dark btn-block">Wyślij</button>
        </form>
+     </div>
      </div>
     `;
     content.classList.remove( "anim-trans-out" );
