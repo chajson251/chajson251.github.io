@@ -37,6 +37,7 @@ logo.addEventListener('click', () =>{
     banner.style.height = '200vh';
   } else {
     all.overflowY = 'hidden';
+    all.overflowX = 'hidden';
     content.style.height = '100vh';
   }
 
