@@ -33,6 +33,7 @@ logo.addEventListener('click', () =>{
   content.classList.add("anim-trans-out" );
   if(media) {
     all.overflowY = 'auto';
+    body.overflowY = 'hidden';
     all.overflowX = 'hidden';
     banner.style.height = '200vh';
   } else {
@@ -66,6 +67,8 @@ aboutLink.addEventListener('click', () =>{
 
   if(media) {
     banner.style.height = '400vh';
+    all.overflowX = 'hidden';
+    body.overflowX = 'hidden';
   } else {
     banner.style.height = 'auto';
     content.style.height = 'auto';
