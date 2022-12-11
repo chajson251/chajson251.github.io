@@ -1,5 +1,7 @@
 const menuButton = document.querySelector('.hamburger');
 const navBar = document.querySelector('.navbar');
+const body = document.querySelector('body').style;
+const all = document.querySelector('*').style;
 
 all.overflowX = 'hidden';
 menuButton.addEventListener('click', (e) => {
@@ -21,8 +23,6 @@ const logo = document.querySelector('.logo');
 const aboutLink = document.querySelector('#about');
 const mapLink = document.querySelector('#map-nav');
 const contactLink = document.querySelector('#contact');
-const body = document.querySelector('body').style;
-const all = document.querySelector('*').style;
 
 const removeInTransition = () => {
   content.classList.remove("anim-trans-in");
