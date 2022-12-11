@@ -282,7 +282,7 @@ textarea {
 }
 
 @media (max-width: 35em) {
-    *,body:not(.hamburger, .hamburger-box, .hamburger-inner, #map, 
+    *,html,body:not(.hamburger, .hamburger-box, .hamburger-inner, #map, 
     .contentMap >*,
 
     ) {
