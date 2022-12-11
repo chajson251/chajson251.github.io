@@ -1,6 +1,5 @@
 const menuButton = document.querySelector('.hamburger');
 const navBar = document.querySelector('.navbar');
-const all = document.querySelector('*').style;
 
 all.overflowX = 'hidden';
 menuButton.addEventListener('click', (e) => {
@@ -22,6 +21,8 @@ const logo = document.querySelector('.logo');
 const aboutLink = document.querySelector('#about');
 const mapLink = document.querySelector('#map-nav');
 const contactLink = document.querySelector('#contact');
+const body = document.querySelector('body').style;
+const all = document.querySelector('*').style;
 
 const removeInTransition = () => {
   content.classList.remove("anim-trans-in");
@@ -59,7 +60,6 @@ logo.addEventListener('click', () =>{
 
 aboutLink.addEventListener('click', () =>{
   content.classList.add( "anim-trans-out" );
-  const body = document.querySelector('body').style;
   all.overflowY = 'auto';
   all.overflowX = 'hidden';
   body.overflowY = 'auto';
@@ -119,8 +119,6 @@ aboutLink.addEventListener('click', () =>{
 
 mapLink.addEventListener('click', () =>{
   content.classList.add( "anim-trans-out" );
-  const all = document.querySelector('*').style;
-  const body = document.querySelector('body').style;
 
   if(media) {
     all.overflowY = 'auto';
@@ -156,8 +154,6 @@ mapLink.addEventListener('click', () =>{
 
 contactLink.addEventListener('click', () =>{
   content.classList.add( "anim-trans-out" );
-  const all = document.querySelector('*').style;
-  const body = document.querySelector('body').style;
   if(media) {
     all.overflowY = 'auto';
     body.overflowY = 'hidden';
