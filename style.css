@@ -104,7 +104,7 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     align-items: center;
-
+    justify-items: center;
 }
 
 .contentContact {
@@ -161,6 +161,13 @@
     margin: 0;
     height: 400px;
     width: 400px;
+}
+
+.immergasPartner {
+    margin: 0;
+    height: auto;
+    width: auto;
+    align-self: center;
 }
 
 h2 {
@@ -303,7 +310,7 @@ textarea {
         grid-template-rows: repeat(3, 1fr);
         grid-column-gap: 0px;
         grid-row-gap: 0px;
-        margin-top: -60vh;
+        margin-top: -70vh;
         z-index: 10;
         overflow: hidden;
     }

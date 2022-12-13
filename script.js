@@ -75,6 +75,7 @@ aboutLink.addEventListener('click', () =>{
   }
     content.innerHTML = `
     <div class="contentAbout">
+    <img class="immergasPartner" src="./public/immergas.png">
     <h3 class="aboutDescription">
           <br>
           Serwis gwarancyjny<br><br>
